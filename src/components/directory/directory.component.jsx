@@ -10,29 +10,34 @@ class DirectoryMenu extends React.Component {
         {
           title: 'hats',
           imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-          id: 1
+          id: 1,
+          routeUrl: 'hats'
         },
         {
           title: 'jackets',
           imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-          id: 2
+          id: 2,
+          routeUrl: 'jackets'
         },
         {
           title: 'sneakers',
           imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-          id: 3
+          id: 3,
+          routeUrl: 'sneakers'
         },
         {
           title: 'womens',
           imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
           size: 'large',
-          id: 4
+          id: 4,
+          routeUrl: 'womens'
         },
         {
           title: 'mens',
           imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
           size: 'large',
-          id: 5
+          id: 5,
+          routeUrl: 'mens'
         }
       ]
     }
@@ -41,15 +46,9 @@ class DirectoryMenu extends React.Component {
   render() {
     return (
       <div className='directory-menu'>
-        {this.state.sections.map( ({ title, imageUrl, id, size }, i) => {
-          return <MenuItem section={title} backgroundImage={imageUrl} size={size} key={id}/>
+        {this.state.sections.map( ({ id, ...otherSectionDetails }, i) => {
+          return <MenuItem key={id} { ...otherSectionDetails }/>
         })}
-
-        {/* <MenuItem section={'hats'}/> */}
-        {/* <MenuItem section={'jackets'}/> */}
-        {/* <MenuItem section={'sneakers'}/> */}
-        {/* <MenuItem section={'womens'}/> */}
-        {/* <MenuItem section={'mens'}/> */}
       </div>
     )
   }
