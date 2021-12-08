@@ -5,23 +5,26 @@ import './directory.styles.scss';
 class DirectoryMenu extends React.Component {
   constructor(){
     super();
-    this.state ={
+    this.state = {
       sections: [
         {
           title: 'hats',
           imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+          size: 'normal',
           id: 1,
           routeUrl: 'hats'
         },
         {
           title: 'jackets',
           imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+          size: 'normal',
           id: 2,
           routeUrl: 'jackets'
         },
         {
           title: 'sneakers',
           imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+          size: 'normal',
           id: 3,
           routeUrl: 'sneakers'
         },
