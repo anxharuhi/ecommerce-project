@@ -21,18 +21,20 @@ class App extends React.Component {
   unsuscribeFromAuth = null
 
   componentDidMount() {
-    firebaseAuth.onAuthStateChanged( user => {
+    this.unsuscribeFromAuth = firebaseAuth.onAuthStateChanged( user => {
       this.setState({ currentUser: user});
       console.log(user);
     })
   }
 
-  com
+  componentWillUnmount() {
+    this.unsuscribeFromAuth();
+  }
 
   render() {
     return (
         <div>
-          <Header />
+          <Header currentUser={this.state.currentUser}/>
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/shop' component={ShopPage} />
